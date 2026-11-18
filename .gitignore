@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Chalice
+.chalice/deployments/
+.chalice/venv/
+
+# CDK
+cdk/.venv/
+cdk/cdk.out/
+*.egg-info/
+
+# AWS
+.aws/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Virtual environments
+venv/
+.venv/
+env/
