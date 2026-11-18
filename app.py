@@ -67,6 +67,30 @@ def upload_and_process():
         print(f"ERROR in upload_and_process: {str(e)}")
         return {'error': str(e)}
 
+@app.route('/records', methods=['POST'], cors=True)
+def save_record():
+    """Save manually edited package details"""
+    try:
+        data = app.current_request.json_body
+        record_id = database.store_record(
+            user_id=data['user_id'],
+            filename='',
+            detected_text='',
+            entities={
+                'first_name':  data.get('first_name', ''),
+                'last_name':   data.get('last_name', ''),
+                'unit_number': data.get('unit_number', ''),
+                'full_address': '',
+                'tracking_number': '',
+            },
+            image_url='',
+            comment=data.get('comment', ''),
+        )
+        return {'record_id': record_id}
+    except Exception as e:
+        return {'error': str(e)}
+
+
 @app.route('/records/{user_id}', methods=['GET'], cors=True)
 def get_records(user_id):
     """Get all text detection records for a user"""
