@@ -3,7 +3,7 @@
     {
       "name": "managed-layer",
       "resource_type": "lambda_layer",
-      "layer_version_arn": "arn:aws:lambda:us-east-1:186814813507:layer:pkg-ship-track-dev-managed-layer:11"
+      "layer_version_arn": "arn:aws:lambda:us-east-1:186814813507:layer:pkg-ship-track-dev-managed-layer:13"
     },
     {
       "name": "api_handler",
